@@ -91,10 +91,9 @@ format = 1
 tile_data = PoolIntArray( 1703982, 2, 0, 1703987, 2, 0, 1835054, 2, 0, 2162735, 2, 0, 2162736, 2, 0 )
 script = ExtResource( 2 )
 numero_de_fases_na_pasta = 5
-imagem_selecionada_para_teste = 3
 
 [node name="icon" type="Sprite" parent="TileMap"]
-modulate = Color( 1, 0, 0, 1 )
+modulate = Color( 0, 1, 0, 1 )
 position = Vector2( 501.483, 300.588 )
 scale = Vector2( 15.8987, 9.50881 )
 z_index = -17

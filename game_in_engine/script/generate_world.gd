@@ -40,7 +40,7 @@ func generate_room():
 			
 			var pixel = image.get_pixel(x,y)
 			var pixel_pos:Vector2 = Vector2(x,y)
-			
+			print(pixel)
 			match pixel:
 				Color(0,0,0,1): #preto
 					set_cell(pixel_pos.x,pixel_pos.y,1)
