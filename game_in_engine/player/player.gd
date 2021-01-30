@@ -13,18 +13,27 @@ var bullet = preload("res://player/bullet/bullet.tscn")
 var can_shot = true
 var on_floor = false
 var death = false
+var in_anim = false
 
+func in_cutscene(value:bool):
+	in_anim = value
+	$AnimationPlayer.play("idlle")
+	set_physics_process(false)
 func _physics_process(delta):
 	SingletonGame.update_pos_player(global_position)
-	if death == true:
+	if in_anim == true and death == false:
+		move.y += gravity
+		
+	if death == true :
+		
 		
 		$AnimationPlayer.current_animation = "death"
 		move.x = 0
 		if Engine.time_scale >= 0.2:
 			Engine.time_scale -= 0.02
-			print(Engine.time_scale)
 			
-	if death == false:
+			
+	if death == false and in_anim == false:
 		move.y += gravity
 		flip_h = $Sprite.flip_h
 		
@@ -181,6 +190,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "death":
 		Engine.time_scale = 1
 		set_physics_process(false)
+		get_tree().change_scene("res://scene/pontoDERetorno .tscn")
 
 func _on_area_body_area_entered(area):
 	if area.is_in_group("weapom_enemie") or area.is_in_group("bullet_enemie"):

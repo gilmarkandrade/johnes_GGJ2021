@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enemies/skull/icon.png" type="Texture" id=2]
 [ext_resource path="res://enemies/skull/Archer_skull.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/prefabs/gate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/prefabs/key.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2623.89, 32.0342 )
@@ -58,3 +60,9 @@ shape = SubResource( 2 )
 
 [node name="Archer_skull" parent="." instance=ExtResource( 3 )]
 position = Vector2( -1028, -1000.07 )
+
+[node name="key" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1442.21, -1434.77 )
+
+[node name="gate" parent="." instance=ExtResource( 4 )]
+position = Vector2( 938.373, -1478.7 )

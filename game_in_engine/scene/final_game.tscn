@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://script/icon.png" type="Texture" id=1]
+
+[node name="final_game" type="Node2D"]
+position = Vector2( -12.3024, -27.7795 )
+rotation = -1.42297
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( -242.335, 582.888 )
+scale = Vector2( 5.4941, 7.29553 )
+texture = ExtResource( 1 )
