@@ -15,7 +15,9 @@ var on_floor = false
 var death = false
 
 func _physics_process(delta):
+	SingletonGame.update_pos_player(global_position)
 	if death == true:
+		
 		$AnimationPlayer.current_animation = "death"
 		move.x = 0
 		if Engine.time_scale >= 0.2:

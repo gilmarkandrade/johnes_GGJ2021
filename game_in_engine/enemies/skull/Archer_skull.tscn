@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://enemies/skull/Esqueleto/Pé Direito.png" type="Texture" id=1]
 [ext_resource path="res://enemies/skull/Esqueleto/Pé Esquerdo.png" type="Texture" id=2]
@@ -19,14 +19,14 @@
 [ext_resource path="res://enemies/skull/Arco/Arco0004.png" type="Texture" id=17]
 [ext_resource path="res://enemies/skull/Arco/Arco0007.png" type="Texture" id=18]
 [ext_resource path="res://enemies/skull/Arco/Arco0003.png" type="Texture" id=19]
+[ext_resource path="res://enemies/skull/Ia_enemie_Skull.gd" type="Script" id=20]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 18.8814
+[sub_resource type="CapsuleShape2D" id=12]
+height = 136.29
 
 [sub_resource type="Animation" id=2]
 resource_name = "Death"
 length = 2.5
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Node2D/Sprite(PernaE)/Sprite(Pé E):position")
 tracks/0/interp = 1
@@ -4590,13 +4590,29 @@ tracks/52/keys = {
 "values": [  ]
 }
 
-[node name="Archer_skull" type="KinematicBody2D"]
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 21.1072
+height = 87.71
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 379.036, 97.6632 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 188.71, 68.6726 )
+
+[node name="Archer_skull" type="KinematicBody2D" groups=[
+"enemie",
+]]
+script = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"enemie",
+]]
+position = Vector2( -2.62204, 25.0966 )
+shape = SubResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 3.0
+playback_speed = 2.0
 anims/Death = SubResource( 2 )
 anims/idlle = SubResource( 3 )
 "anims/idlle left" = SubResource( 4 )
@@ -4609,30 +4625,25 @@ anims/walking = SubResource( 7 )
 position = Vector2( 0, -0.463291 )
 
 [node name="Sprite(Cabeça)" type="Sprite" parent="Node2D"]
-position = Vector2( 0.267658, -39.1989 )
-rotation = -0.0492668
+position = Vector2( 1.66434, -42.6906 )
 z_index = 1
 texture = ExtResource( 4 )
-flip_h = true
 
 [node name="Sprite(corpo)" type="Sprite" parent="Node2D"]
-position = Vector2( -0.886246, 7.70728 )
-rotation = -0.0492668
+position = Vector2( 0.510437, 4.21558 )
 scale = Vector2( 0.865371, 1 )
 texture = ExtResource( 10 )
-flip_h = true
 __meta__ = {
 "_edit_bone_": true,
 "_edit_ik_": true
 }
 
 [node name="Sprite(ABraçoE)" type="Sprite" parent="Node2D"]
-position = Vector2( -13.3747, -17.1924 )
-rotation = 12.8392
+position = Vector2( 15.5562, -19.3108 )
+rotation = 12.4683
 z_index = -1
 texture = ExtResource( 3 )
 offset = Vector2( 0, 15 )
-flip_h = true
 __meta__ = {
 "_edit_bone_": true,
 "_edit_ik_": true
@@ -4640,16 +4651,15 @@ __meta__ = {
 
 [node name="Sprite(BraçoE)" type="Sprite" parent="Node2D/Sprite(ABraçoE)"]
 position = Vector2( -0.00928879, 34.4444 )
-rotation = 56.8806
+rotation = 56.3722
 texture = ExtResource( 11 )
 offset = Vector2( 0, 11 )
-flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Mão E" type="Sprite" parent="Node2D/Sprite(ABraçoE)/Sprite(BraçoE)"]
-position = Vector2( -2.58013, 31.435 )
+position = Vector2( 0.704245, 23.8916 )
 rotation = -4.73988
 texture = ExtResource( 13 )
 offset = Vector2( -25, 1 )
@@ -4662,8 +4672,8 @@ __meta__ = {
 }
 
 [node name="Sprite4(ABraçoD)" type="Sprite" parent="Node2D"]
-position = Vector2( 18.4448, -18.8682 )
-rotation = -0.12779
+position = Vector2( -19.5004, -19.5937 )
+rotation = 0.40437
 z_index = 1
 texture = ExtResource( 5 )
 offset = Vector2( 0, 14 )
@@ -4674,21 +4684,19 @@ __meta__ = {
 
 [node name="Sprite(BraçoD)" type="Sprite" parent="Node2D/Sprite4(ABraçoD)"]
 position = Vector2( 1.29542, 30.8139 )
-rotation = 0.654954
+rotation = -0.471099
 z_index = 1
 texture = ExtResource( 6 )
 offset = Vector2( 0, 13 )
-flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Mão D" type="Sprite" parent="Node2D/Sprite4(ABraçoD)/Sprite(BraçoD)"]
-position = Vector2( -4, 28.343 )
+position = Vector2( 4.46622, 28.3433 )
 rotation = -6.42993
 texture = ExtResource( 7 )
 offset = Vector2( 0, 5 )
-flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }
@@ -4708,42 +4716,68 @@ __meta__ = {
 }
 
 [node name="Sprite(PernaE)" type="Sprite" parent="Node2D"]
-position = Vector2( -9.20783, 27.6015 )
-rotation = 0.226195
+position = Vector2( 10.8028, 26.9706 )
 z_index = -1
 texture = ExtResource( 8 )
 offset = Vector2( 0, 15 )
-flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Sprite(Pé E)" type="Sprite" parent="Node2D/Sprite(PernaE)"]
-position = Vector2( -0.66161, 35.0948 )
-rotation = -0.30119
+position = Vector2( 0.559998, 35.432 )
 texture = ExtResource( 2 )
-offset = Vector2( -5, 18 )
-flip_h = true
+offset = Vector2( 5, 18 )
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Sprite(PernaD)" type="Sprite" parent="Node2D"]
-position = Vector2( 17.5619, 27.4847 )
-rotation = 0.0126378
+position = Vector2( -18.2252, 29.2662 )
 texture = ExtResource( 9 )
 offset = Vector2( 0, 15 )
-flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Sprite(Pé D)" type="Sprite" parent="Node2D/Sprite(PernaD)"]
-position = Vector2( -3.06431, 33.4667 )
-rotation = -0.173563
+position = Vector2( -0.0664616, 33.624 )
 texture = ExtResource( 1 )
 offset = Vector2( 2, 19 )
-flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }
+
+[node name="body" type="Area2D" parent="." groups=[
+"enemie",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body" groups=[
+"enemie",
+]]
+position = Vector2( -3.17105, 10.6831 )
+shape = SubResource( 9 )
+
+[node name="area_range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_range"]
+position = Vector2( -3.77551, 5.66324 )
+shape = SubResource( 10 )
+
+[node name="area_back" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_back"]
+position = Vector2( -2.99658, 3.74576 )
+shape = SubResource( 11 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -3.79232, 21.5816 )
+scale = Vector2( 17.9042, 15.5208 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="area_entered" from="body" to="." method="_on_body_area_entered"]
+[connection signal="body_entered" from="area_range" to="." method="_on_area_range_body_entered"]
+[connection signal="body_exited" from="area_range" to="." method="_on_area_range_body_exited"]
+[connection signal="body_entered" from="area_back" to="." method="_on_area_back_body_entered"]
+[connection signal="body_exited" from="area_back" to="." method="_on_area_back_body_exited"]
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

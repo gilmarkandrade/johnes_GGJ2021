@@ -19,6 +19,10 @@ config/name="Jones's Redemption Seek"
 run/main_scene="res://scene/main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SingletonGame="*res://script/singletonGame.gd"
+
 [input]
 
 ui_left={
