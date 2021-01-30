@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 15.3454 )
+
+[node name="gate" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.33371, -15.3374 )
+shape = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 3.78873, -7.7113 )
+texture = ExtResource( 1 )
