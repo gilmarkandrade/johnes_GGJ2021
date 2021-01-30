@@ -4,9 +4,11 @@ export (bool) var random_active = false
 export (int) var numero_de_fases_na_pasta = 1
 var image = load("res://levels/teste.png").get_data()
 export(int) var imagem_selecionada_para_teste = 1
-var enemy1 = preload("res://enemies/skull/Archer_skull.tscn").instance()
-
-
+var enemy1 = preload("res://enemies/skull/Archer_skull.tscn")
+var player = preload("res://player/player.tscn")
+var key = preload("res://scene/prefabs/key.tscn")
+var gate = preload("res://scene/prefabs/gate.tscn") 
+var check_create_player = false
 func _ready():
 	
 	if random_active :
@@ -42,9 +44,36 @@ func generate_room():
 			match pixel:
 				Color(0,0,0,1): #preto
 					set_cell(pixel_pos.x,pixel_pos.y,1)
-					set_cell(pixel_pos.x, pixel_pos.y , 1, false,  false,false, Vector2( 1, 0))
+					#set_cell(pixel_pos.x, pixel_pos.y , 1, false,  false,false, Vector2( 1, 0))
 					
 				Color(1,0,0,1):#vermelho
 					set_cell(pixel_pos.x,pixel_pos.y,2)
-					var e1 = enemy1.get_parent().add_child(enemy1)
-					e1.position = pixel_pos
+					var pos_tile = map_to_world(pixel_pos)
+					var e1 = enemy1.instance()
+					get_parent().add_child(e1)
+					e1.position = pos_tile
+					
+				Color(0,1,0,1): #verde
+					if check_create_player == false:
+						set_cell(pixel_pos.x,pixel_pos.y,2)
+						var pos_tile = map_to_world(pixel_pos)
+						var P = player.instance()
+						get_parent().add_child(P)
+						P.position = pos_tile
+						check_create_player = true
+						
+				Color(1,1,0,1):# amarelo
+					set_cell(pixel_pos.x,pixel_pos.y,2)
+					var pos_tile = map_to_world(pixel_pos)
+					var K= key.instance()
+					get_parent().add_child(K)
+					K.position = pos_tile
+					
+				Color(0,0,1,1):# azul
+					
+					set_cell(pixel_pos.x,pixel_pos.y,2)
+					var pos_tile = map_to_world(pixel_pos)
+					var G = gate.instance()
+					get_parent().add_child(G)
+					G.position = pos_tile
+	
