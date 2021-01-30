@@ -2631,6 +2631,20 @@ tracks/55/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/56/type = "method"
+tracks/56/path = NodePath(".")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/keys = {
+"times": PoolRealArray( 1.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ false ],
+"method": "create_bullet"
+} ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "shoot left"
@@ -3306,6 +3320,20 @@ tracks/55/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/56/type = "method"
+tracks/56/path = NodePath(".")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/keys = {
+"times": PoolRealArray( 1.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "create_bullet"
+} ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -4603,6 +4631,7 @@ extents = Vector2( 188.71, 68.6726 )
 [node name="Archer_skull" type="KinematicBody2D" groups=[
 "enemie",
 ]]
+scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
@@ -4625,9 +4654,10 @@ anims/walking = SubResource( 7 )
 position = Vector2( 0, -0.463291 )
 
 [node name="Sprite(Cabeça)" type="Sprite" parent="Node2D"]
-position = Vector2( 1.66434, -42.6906 )
+position = Vector2( 0.201312, -42.6906 )
 z_index = 1
 texture = ExtResource( 4 )
+flip_h = true
 
 [node name="Sprite(corpo)" type="Sprite" parent="Node2D"]
 position = Vector2( 0.510437, 4.21558 )
@@ -4639,11 +4669,12 @@ __meta__ = {
 }
 
 [node name="Sprite(ABraçoE)" type="Sprite" parent="Node2D"]
-position = Vector2( 15.5562, -19.3108 )
-rotation = 12.4683
+position = Vector2( -19.2827, -19.403 )
+rotation = 12.8575
 z_index = -1
 texture = ExtResource( 3 )
 offset = Vector2( 0, 15 )
+flip_h = true
 __meta__ = {
 "_edit_bone_": true,
 "_edit_ik_": true
@@ -4651,17 +4682,19 @@ __meta__ = {
 
 [node name="Sprite(BraçoE)" type="Sprite" parent="Node2D/Sprite(ABraçoE)"]
 position = Vector2( -0.00928879, 34.4444 )
-rotation = 56.3722
+rotation = 58.6569
 texture = ExtResource( 11 )
 offset = Vector2( 0, 11 )
+flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Mão E" type="Sprite" parent="Node2D/Sprite(ABraçoE)/Sprite(BraçoE)"]
-position = Vector2( 0.704245, 23.8916 )
-rotation = -4.73988
-texture = ExtResource( 13 )
+position = Vector2( 2.09591, 30.2751 )
+rotation = -5.54988
+z_index = 1
+texture = ExtResource( 19 )
 offset = Vector2( -25, 1 )
 
 [node name="Position2D" type="Position2D" parent="Node2D/Sprite(ABraçoE)/Sprite(BraçoE)"]
@@ -4672,11 +4705,12 @@ __meta__ = {
 }
 
 [node name="Sprite4(ABraçoD)" type="Sprite" parent="Node2D"]
-position = Vector2( -19.5004, -19.5937 )
-rotation = 0.40437
+position = Vector2( 17.3925, -19.0667 )
+rotation = -0.736649
 z_index = 1
 texture = ExtResource( 5 )
 offset = Vector2( 0, 14 )
+flip_h = true
 __meta__ = {
 "_edit_bone_": true,
 "_edit_ik_": true
@@ -4684,19 +4718,21 @@ __meta__ = {
 
 [node name="Sprite(BraçoD)" type="Sprite" parent="Node2D/Sprite4(ABraçoD)"]
 position = Vector2( 1.29542, 30.8139 )
-rotation = -0.471099
+rotation = 2.38396
 z_index = 1
 texture = ExtResource( 6 )
 offset = Vector2( 0, 13 )
+flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Mão D" type="Sprite" parent="Node2D/Sprite4(ABraçoD)/Sprite(BraçoD)"]
-position = Vector2( 4.46622, 28.3433 )
-rotation = -6.42993
+position = Vector2( -4, 28.343 )
+rotation = -6.33366
 texture = ExtResource( 7 )
 offset = Vector2( 0, 5 )
+flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }
@@ -4716,10 +4752,11 @@ __meta__ = {
 }
 
 [node name="Sprite(PernaE)" type="Sprite" parent="Node2D"]
-position = Vector2( 10.8028, 26.9706 )
+position = Vector2( -15.8964, 27.0905 )
 z_index = -1
 texture = ExtResource( 8 )
 offset = Vector2( 0, 15 )
+flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }
@@ -4727,15 +4764,17 @@ __meta__ = {
 [node name="Sprite(Pé E)" type="Sprite" parent="Node2D/Sprite(PernaE)"]
 position = Vector2( 0.559998, 35.432 )
 texture = ExtResource( 2 )
-offset = Vector2( 5, 18 )
+offset = Vector2( -5, 18 )
+flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Sprite(PernaD)" type="Sprite" parent="Node2D"]
-position = Vector2( -18.2252, 29.2662 )
+position = Vector2( 9.49933, 27.7371 )
 texture = ExtResource( 9 )
 offset = Vector2( 0, 15 )
+flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }
@@ -4743,7 +4782,8 @@ __meta__ = {
 [node name="Sprite(Pé D)" type="Sprite" parent="Node2D/Sprite(PernaD)"]
 position = Vector2( -0.0664616, 33.624 )
 texture = ExtResource( 1 )
-offset = Vector2( 2, 19 )
+offset = Vector2( -2, 19 )
+flip_h = true
 __meta__ = {
 "_edit_bone_": true
 }

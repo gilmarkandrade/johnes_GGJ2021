@@ -183,5 +183,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		set_physics_process(false)
 
 func _on_area_body_area_entered(area):
-	if area.is_in_group("weapom_enemie"):
+	if area.is_in_group("weapom_enemie") or area.is_in_group("bullet_enemie"):
 		death = true

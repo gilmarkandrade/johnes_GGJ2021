@@ -7,8 +7,8 @@ var flip = false
 var in_range = false
 var can_shoot = true
 var in_area_return = false
-var life = 3
-
+var life = 30
+var bullet = preload("res://enemies/skull/projetil_enemy.tscn")
 func _ready():
 	set_physics_process(false)
 	
@@ -42,6 +42,7 @@ func _physics_process(delta):
 				else:
 					
 					$AnimationPlayer.play("shoot left")
+					
 		elif in_area_return == true and in_range == true:
 			if flip == false:
 				move.x =- speed
@@ -103,6 +104,13 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		can_shoot = true
 	if anim_name == "death":
 		set_physics_process(false)
+
+func create_bullet(value:bool):
+	var B = bullet.instance()
+	get_parent().add_child(B)
+	B.position = $"Node2D/Sprite(ABraçoE)/Sprite(BraçoE)/Position2D".global_position
+	B.flip_h = flip
+	
 
 func _on_VisibilityNotifier2D_screen_entered():
 	set_physics_process(true)
