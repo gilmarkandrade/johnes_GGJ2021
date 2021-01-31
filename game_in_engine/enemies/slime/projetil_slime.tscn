@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://enemies/slime/Projetil/Projetil0134.png" type="Texture" id=1]
+[ext_resource path="res://enemies/slime/bulletSlime.gd" type="Script" id=2]
+[ext_resource path="res://enemies/slime/Projetil/Projetil_explosao0141.png" type="Texture" id=3]
+[ext_resource path="res://enemies/slime/Projetil/Projetil_explosao0138.png" type="Texture" id=4]
+[ext_resource path="res://enemies/slime/Projetil/Projetil_explosao0137.png" type="Texture" id=5]
+[ext_resource path="res://enemies/slime/Projetil/Projetil_explosao0139.png" type="Texture" id=6]
+[ext_resource path="res://enemies/slime/Projetil/Projetil_explosao0140.png" type="Texture" id=7]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 13.458
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "destroy",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "motion",
+"speed": 8.0
+} ]
+
+[node name="arrowenemie" type="Area2D" groups=[
+"bullet_enemie",
+]]
+collision_layer = 31
+collision_mask = 31
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"bullet_enemie",
+]]
+position = Vector2( -1.19189, -1.45676 )
+rotation = 1.57411
+shape = SubResource( 3 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 5.91477, 0.434166 )
+scale = Vector2( 15.953, 1.07492 )
+
+[node name="icon" type="AnimatedSprite" parent="."]
+position = Vector2( 6.15919, 6.22561 )
+scale = Vector2( 0.752932, 0.821526 )
+frames = SubResource( 2 )
+animation = "motion"
+playing = true
+[connection signal="area_entered" from="." to="." method="_on_arrowenemie_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_arrowenemie_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

@@ -479,10 +479,7 @@ one_shot = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -1.7818 )
 current = true
-limit_left = 0
-limit_top = 0
-limit_right = 6400
-limit_bottom = 6400
+zoom = Vector2( 1.2, 1.2 )
 smoothing_enabled = true
 smoothing_speed = 8.0
 

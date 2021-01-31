@@ -1,32 +1,29 @@
 extends Area2D
 var move = Vector2()
-var speed = 3
+var speed = 0.5
 var destroy = false
 var flip_h = false
 var dow = false
 
-	
 
 func _process(delta):
 	if destroy == false:
-		$icon.flip_h = flip_h
+		$icon.flip_h = !flip_h
 		if !flip_h:
 			move.x += speed
+			if move.y > -3 and dow == false:
+				move.y -= 0.3
+			else: 
+				dow = true
+				move.y += 0.3
+		else:
+			move.x -= speed
+			if move.y > -3 and dow == false:
+				move.y -= 0.3
+			else: 
+				dow = true
+				move.y += 0.3
 			
-		else:
-			move.x -= speed
-		
-	else :
-		if move.y > -50 and dow == false:
-			move.y -= 5
-		else:
-			move.y += 5
-			dow = true
-		if !flip_h:
-			move.x -= speed
-		else:
-			move.x += speed
-		$icon.rotation -= 01
 	translate(move)
 
 
@@ -48,12 +45,15 @@ func _on_arrowenemie_area_entered(area):
 	
 	if area.is_in_group("bullet"):
 		destroy = true
+		$icon.play("destroy")
+		remove_from_group("bullet_enemie")
+		
+	if area.is_in_group("wall"):
+		destroy = true
+		$icon.play("destroy")
 		remove_from_group("bullet_enemie")
 
 
 
-
-
-
-
-	
+func _on_VisibilityNotifier2D_screen_entered():
+	queue_free()

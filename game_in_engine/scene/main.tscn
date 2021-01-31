@@ -145,3 +145,4 @@ anims/open = SubResource( 4 )
 [node name="themegameplay" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -6.0
+autoplay = true

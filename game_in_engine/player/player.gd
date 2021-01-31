@@ -15,6 +15,9 @@ var on_floor = false
 var death = false
 var in_anim = false
 
+func _ready():
+	in_anim = false
+	
 func in_cutscene(value:bool):
 	in_anim = value
 	$AnimationPlayer.play("idlle")

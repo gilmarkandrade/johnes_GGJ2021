@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enemies/skull/icon.png" type="Texture" id=2]
 [ext_resource path="res://enemies/skull/Archer_skull.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/prefabs/gate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/prefabs/key.tscn" type="PackedScene" id=5]
+[ext_resource path="res://enemies/slime/Slime.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2623.89, 32.0342 )
@@ -14,9 +15,13 @@ radius = 120.558
 
 [node name="fase de teste" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
+"wall",
+]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=[
+"wall",
+]]
 position = Vector2( -228.844, 0 )
 shape = SubResource( 1 )
 
@@ -58,11 +63,14 @@ position = Vector2( -515.081, 1082.99 )
 ]]
 shape = SubResource( 2 )
 
-[node name="Archer_skull" parent="." instance=ExtResource( 3 )]
-position = Vector2( -1028, -1000.07 )
-
 [node name="key" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1442.21, -1434.77 )
 
 [node name="gate" parent="." instance=ExtResource( 4 )]
 position = Vector2( 978.96, -1469.26 )
+
+[node name="slime" parent="." instance=ExtResource( 6 )]
+position = Vector2( -2522.9, -682.438 )
+
+[node name="Archer_skull" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1813.8, -1483.25 )
