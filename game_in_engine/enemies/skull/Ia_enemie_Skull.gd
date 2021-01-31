@@ -15,6 +15,10 @@ func _ready():
 	
 func _physics_process(delta):
 	move.y += gravity
+	
+	if death == true: 
+		move.x = 0
+		
 	if death == false:
 		
 		

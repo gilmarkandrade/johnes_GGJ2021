@@ -159,6 +159,7 @@ format = 1
 tile_data = PoolIntArray( 1703982, 2, 0, 1703987, 2, 0, 1835054, 2, 0, 2162735, 2, 0, 2162736, 2, 0 )
 script = ExtResource( 2 )
 numero_de_fases_na_pasta = 5
+imagem_selecionada_para_teste = 4
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="TileMap"]
 z_index = 128

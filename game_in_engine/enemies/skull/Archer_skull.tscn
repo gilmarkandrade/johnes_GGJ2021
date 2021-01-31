@@ -25,7 +25,8 @@
 [ext_resource path="res://audio/soundEffect/sfx game jam/som_flecha_game_jam.wav" type="AudioStream" id=23]
 
 [sub_resource type="CapsuleShape2D" id=1]
-height = 136.29
+radius = 4.61611
+height = 93.7884
 
 [sub_resource type="Animation" id=2]
 resource_name = "Death"
@@ -4640,7 +4641,7 @@ script = ExtResource( 20 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
 "enemie",
 ]]
-position = Vector2( -2.62204, 25.0966 )
+position = Vector2( -3.01531, 44.7607 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -5,6 +5,7 @@ export (int) var numero_de_fases_na_pasta = 1
 var image = load("res://levels/teste.png").get_data()
 export(int) var imagem_selecionada_para_teste = 1
 var enemy1 = preload("res://enemies/skull/Archer_skull.tscn")
+var enemy2= preload("res://enemies/slime/Slime.tscn")
 var player = preload("res://player/player.tscn")
 var key = preload("res://scene/prefabs/key.tscn")
 var gate = preload("res://scene/prefabs/gate.tscn") 
@@ -51,10 +52,17 @@ func generate_room():
 				Color(1,0,0,1):#vermelho
 					set_cell(pixel_pos.x,pixel_pos.y,2)
 					var pos_tile = map_to_world(pixel_pos)
-					var e1 = enemy1.instance()
-					get_parent().add_child(e1)
-					e1.position = pos_tile
-					
+					var rng = RandomNumberGenerator.new()
+					rng.randomize()
+					var enemyselected = rng .randi_range(1,2)
+					if enemyselected == 1:
+						var e1 = enemy1.instance()
+						get_parent().add_child(e1)
+						e1.position = pos_tile
+					if enemyselected == 2:
+						var e2 = enemy2.instance()
+						get_parent().add_child(e2)
+						e2.position = pos_tile
 				Color(0,1,0,1): #verde
 					if check_create_player == false:
 						set_cell(pixel_pos.x,pixel_pos.y,2)
