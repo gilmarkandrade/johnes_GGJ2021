@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://script/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/fundo.jpg.jpeg" type="Texture" id=2]
@@ -12,6 +12,10 @@
 [ext_resource path="res://assets/Botao_Normal.png" type="Texture" id=10]
 [ext_resource path="res://assets/Logo_jogo.png" type="Texture" id=11]
 [ext_resource path="res://audio/soundTrack/músicas game jam/menu_game_jam_looping.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/iconeeua_aceso.png" type="Texture" id=13]
+[ext_resource path="res://assets/Iconebr_apagado.png" type="Texture" id=14]
+[ext_resource path="res://assets/iconeeua_apagado.png" type="Texture" id=15]
+[ext_resource path="res://assets/Iconebr_aceso.png" type="Texture" id=16]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 8 )
@@ -72,6 +76,46 @@ region_rect = Rect2( 0, 0, 720, 360 )
 [sub_resource type="StyleBoxTexture" id=15]
 texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 720, 360 )
+
+[sub_resource type="StyleBoxTexture" id=24]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 250, 250 )
+
+[sub_resource type="StyleBoxTexture" id=25]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 250, 250 )
+
+[sub_resource type="StyleBoxTexture" id=26]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 250, 250 )
+
+[sub_resource type="StyleBoxTexture" id=27]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 250, 250 )
+
+[sub_resource type="StyleBoxTexture" id=28]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 250, 250 )
+
+[sub_resource type="StyleBoxTexture" id=29]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 225, 225 )
+
+[sub_resource type="StyleBoxTexture" id=30]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 225, 225 )
+
+[sub_resource type="StyleBoxTexture" id=31]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 225, 225 )
+
+[sub_resource type="StyleBoxTexture" id=32]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 225, 225 )
+
+[sub_resource type="StyleBoxTexture" id=33]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 225, 225 )
 
 [sub_resource type="StyleBoxTexture" id=16]
 texture = ExtResource( 8 )
@@ -233,12 +277,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/play"]
-margin_left = 62.7075
-margin_top = 33.9575
-margin_right = 96.7075
-margin_bottom = 47.9575
-rect_scale = Vector2( 1.88, 1.68 )
-text = "Jogar"
+margin_left = 46.7305
+margin_top = 32.2757
+margin_right = 92.7305
+margin_bottom = 46.2757
+rect_scale = Vector2( 2.64, 2.12 )
+text = "B_PLAY"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -265,13 +309,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/creditos"]
-margin_left = 42.0639
-margin_top = 39.5913
-margin_right = 101.064
-margin_bottom = 70.5913
+margin_left = 45.0
+margin_top = 35.0
+margin_right = 113.0
+margin_bottom = 53.0
 rect_scale = Vector2( 2.05218, 2.30083 )
-text = "creditos
-"
+text = "B_CREDITS"
 autowrap = true
 
 [node name="quit" type="Button" parent="CanvasLayer"]
@@ -282,7 +325,7 @@ margin_bottom = 456.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath("../creditos")
 focus_neighbour_right = NodePath(".")
-focus_neighbour_bottom = NodePath("../play")
+focus_neighbour_bottom = NodePath("../pt")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
 custom_styles/hover = SubResource( 11 )
@@ -298,7 +341,7 @@ margin_top = 36.7119
 margin_right = 86.9903
 margin_bottom = 50.7119
 rect_scale = Vector2( 3, 2.52 )
-text = "sair"
+text = "B_QUIT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -314,6 +357,46 @@ self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 426.138, 316.068 )
 scale = Vector2( 0.0274911, 0.0183803 )
 texture = ExtResource( 5 )
+
+[node name="pt" type="Button" parent="CanvasLayer"]
+margin_left = 974.0
+margin_top = 555.0
+margin_right = 1007.0
+margin_bottom = 587.0
+focus_neighbour_left = NodePath("../en")
+focus_neighbour_top = NodePath("../quit")
+focus_neighbour_right = NodePath("../en")
+focus_neighbour_bottom = NodePath("../play")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/disabled = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="en" type="Button" parent="CanvasLayer"]
+margin_left = 925.143
+margin_top = 557.123
+margin_right = 958.143
+margin_bottom = 589.123
+focus_neighbour_left = NodePath("../pt")
+focus_neighbour_top = NodePath("../quit")
+focus_neighbour_right = NodePath("../pt")
+focus_neighbour_bottom = NodePath("../play")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+custom_styles/hover = SubResource( 29 )
+custom_styles/pressed = SubResource( 30 )
+custom_styles/focus = SubResource( 31 )
+custom_styles/disabled = SubResource( 32 )
+custom_styles/normal = SubResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 margin_left = -47.0
@@ -368,7 +451,7 @@ margin_top = 39.5052
 margin_right = 88.2151
 margin_bottom = 53.5052
 rect_scale = Vector2( 2.36, 2 )
-text = "Voltar"
+text = "InfO_back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -391,6 +474,8 @@ autoplay = true
 [connection signal="pressed" from="CanvasLayer/creditos" to="." method="_on_creditos_pressed"]
 [connection signal="focus_entered" from="CanvasLayer/quit" to="." method="_on_quit_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/quit" to="." method="_on_quit_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/pt" to="." method="_on_pt_focus_entered"]
+[connection signal="focus_entered" from="CanvasLayer/en" to="." method="_on_en_focus_entered"]
 [connection signal="focus_entered" from="CanvasLayer/back" to="." method="_on_back_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/back" to="." method="_on_back_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -72,7 +72,7 @@ margin_top = 664.667
 margin_right = 237.0
 margin_bottom = 1168.66
 rect_scale = Vector2( 2.78207, 2.08 )
-text = "Jhones James Spaghetti é um cowboy que vive em um futuro trágico em que a humanidade encontra-se quase extinta. A natureza está morta, a água potável está escassa e poucos animais ainda vivem, alimentando-se dos cadáveres daqueles que faleceram. Em um futuro onde a viagem no tempo já é possível, Jhones descobriu uma relíquea no passado que, se for recuperada, poderá salvar toda a vida no futuro, trazendo de volta a luz em tempos muitos sombrios. Jhones tentará agora recuperar este ítem a todo o custo. O peso da vida de todo o planeta está em suas mãos."
+text = "TGS_1"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

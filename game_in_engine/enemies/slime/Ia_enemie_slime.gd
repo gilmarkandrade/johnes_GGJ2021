@@ -112,14 +112,14 @@ func _on_VisibilityNotifier2D_screen_entered():
 func _on_VisibilityNotifier2D_screen_exited():
 
 	
-	if death == true:
-		queue_free()
-	else:
+	if death == false:
+	
 		set_physics_process(false)
 
 
 func _on_slimesprite_animation_finished():
-	
+	if $slimesprite.animation == "death":
+		queue_free()
 	if $slimesprite.animation == "move":
 		inmove2 = true
 		$slimesprite.play("move2")

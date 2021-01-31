@@ -2,7 +2,7 @@ extends TileMap
 
 export (bool) var random_active = false
 export (int) var numero_de_fases_na_pasta = 1
-var image = load("res://levels/teste.png").get_data()
+var image = load("res://levels/1.png").get_data()
 export(int) var imagem_selecionada_para_teste = 1
 var enemy1 = preload("res://enemies/skull/Archer_skull.tscn")
 var enemy2= preload("res://enemies/slime/Slime.tscn")

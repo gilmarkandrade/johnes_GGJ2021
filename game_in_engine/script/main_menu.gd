@@ -61,3 +61,12 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "openmenu":
 		$AnimationPlayer.play("motion")
 	
+
+
+
+func _on_pt_focus_entered():
+	TranslationServer.set_locale("pt")
+
+
+func _on_en_focus_entered():
+	TranslationServer.set_locale("en")

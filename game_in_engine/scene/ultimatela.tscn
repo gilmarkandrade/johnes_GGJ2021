@@ -65,7 +65,7 @@ margin_top = 634.804
 margin_right = 263.118
 margin_bottom = 988.806
 rect_scale = Vector2( 1.8, 2.24 )
-text = "Após enfrentar o terrível desafio de voltar ao passado e encontrar a relíquia, Jhones voltou ao futuro e salvou a humanidade. Porém, enquanto via a terra ser recuperada com a ajuda de todos aqueles que ama, Jhones percebeu que algo o havia marcado: a viagem no tempo lhe causou uma ferida mortal. Havia um preço desconhecido pelo uso da relíquia e Jhones ficou com essa marca em seu corpo. Ainda assim, o herói foi capaz de esconder tal situação de todos e ajudou a terra recuperar sua vida. Milênios se passaram e sua história ainda era contado por todos os povos, como o maior herói que já pisou no solo deste planeta"
+text = "TGS_2"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

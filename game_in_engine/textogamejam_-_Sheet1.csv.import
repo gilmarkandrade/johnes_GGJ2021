@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://textogamejam_-_Sheet1.en.translation", "res://textogamejam_-_Sheet1.pt.translation" ]
+
+source_file="res://textogamejam_-_Sheet1.csv"
+dest_files=[ "res://textogamejam_-_Sheet1.en.translation", "res://textogamejam_-_Sheet1.pt.translation" ]
+
+[params]
+
+compress=true
+delimiter=0
