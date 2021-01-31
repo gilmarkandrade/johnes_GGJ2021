@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/idlle/frame0016.png" type="Texture" id=2]
@@ -87,8 +87,9 @@
 [ext_resource path="res://player/death/frame0102.png" type="Texture" id=85]
 [ext_resource path="res://player/death/frame0106.png" type="Texture" id=86]
 [ext_resource path="res://player/death/frame0101.png" type="Texture" id=87]
+[ext_resource path="res://assets/lightpalayer.png" type="Texture" id=88]
 
-[sub_resource type="RayShape2D" id=1]
+[sub_resource type="RayShape2D" id=13]
 length = 18.7572
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -152,7 +153,7 @@ tracks/1/keys = {
 "values": [ 1.0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=14]
 resource_name = "idlle_2"
 length = 5.0
 tracks/0/type = "value"
@@ -180,7 +181,7 @@ tracks/1/keys = {
 "values": [ 1.0 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=15]
 resource_name = "idlle_3"
 length = 5.0
 loop = true
@@ -237,7 +238,7 @@ tracks/1/keys = {
 "values": [ 1.8, 1.0 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=16]
 resource_name = "jump_up"
 length = 2.0
 tracks/0/type = "value"
@@ -376,7 +377,7 @@ script = ExtResource( 1 )
 ]]
 position = Vector2( 5.46202, 94.7119 )
 scale = Vector2( 4.84, 1 )
-shape = SubResource( 1 )
+shape = SubResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
 "player",
@@ -390,10 +391,10 @@ texture = ExtResource( 11 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/death = SubResource( 3 )
 anims/idlle = SubResource( 4 )
-anims/idlle_2 = SubResource( 5 )
-anims/idlle_3 = SubResource( 6 )
+anims/idlle_2 = SubResource( 14 )
+anims/idlle_3 = SubResource( 15 )
 anims/jump_dow = SubResource( 7 )
-anims/jump_up = SubResource( 8 )
+anims/jump_up = SubResource( 16 )
 anims/return_idlle = SubResource( 9 )
 anims/run = SubResource( 10 )
 anims/shoot = SubResource( 11 )
@@ -427,6 +428,14 @@ enabled = true
 ]]
 position = Vector2( 5.24408, 7.49153 )
 shape = SubResource( 12 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 0.896063, -2.9577 )
+scale = Vector2( 3.90026, 2.29327 )
+texture = ExtResource( 88 )
+energy = 0.6
+range_layer_min = -128
+range_layer_max = 128
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="delay_fumando" to="." method="_on_delay_fumando_timeout"]
 [connection signal="area_entered" from="area_body" to="." method="_on_area_body_area_entered"]

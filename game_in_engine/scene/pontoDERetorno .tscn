@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Background/Chão.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://assets/Background/montaisn_frente.png" type="Texture" id=4]
 [ext_resource path="res://assets/Background/Pedra.png" type="Texture" id=5]
 [ext_resource path="res://assets/Background/MetadeBuraco.png" type="Texture" id=6]
+[ext_resource path="res://script/portal.gd" type="Script" id=7]
+[ext_resource path="res://assets/Background/Fundo.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 900.961, 10 )
@@ -31,6 +33,24 @@ extents = Vector2( 10, 288.555 )
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 188.097, 10 )
 
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 245.633, 67.1511 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "motion"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
 [node name="pontoDERetorno " type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource( 1 )]
@@ -44,21 +64,31 @@ limit_bottom = 210
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
+[node name="Fundo" type="Sprite" parent="ParallaxBackground"]
+light_mask = 4
+position = Vector2( 451.744, 190.596 )
+scale = Vector2( 0.813637, 0.944004 )
+z_index = -128
+texture = ExtResource( 8 )
+
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="montaisn_background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 265.564, -267.402 )
-scale = Vector2( 1.19987, 1.04598 )
+light_mask = 2
+position = Vector2( -86.8089, -697.709 )
+scale = Vector2( 1.95004, 2.51968 )
+z_index = -2
+texture = ExtResource( 3 )
+
+[node name="montaisn_background2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+light_mask = 2
+position = Vector2( -1395.76, -503.434 )
+scale = Vector2( 1.48008, 1.77674 )
 z_index = -2
 texture = ExtResource( 3 )
 
 [node name="ParallaxLayerFrente" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="montaisn_frente" type="Sprite" parent="ParallaxBackground/ParallaxLayerFrente"]
-position = Vector2( 390.511, -348.537 )
-scale = Vector2( 1.03163, 1.25347 )
-z_index = -1
-texture = ExtResource( 4 )
+motion_scale = Vector2( 0.6, 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( -1465.02, 53.1125 )
@@ -95,6 +125,12 @@ shape = SubResource( 7 )
 position = Vector2( 1776.66, 387.297 )
 shape = SubResource( 8 )
 
+[node name="montaisn_frente" type="Sprite" parent="."]
+position = Vector2( 417.225, -463.006 )
+scale = Vector2( 1.45682, 1.55047 )
+z_index = -128
+texture = ExtResource( 4 )
+
 [node name="Chão" type="Sprite" parent="."]
 position = Vector2( 274.311, 121.31 )
 scale = Vector2( 2.13568, 2.10433 )
@@ -113,5 +149,30 @@ texture = ExtResource( 5 )
 position = Vector2( -50.406, 34.9775 )
 texture = ExtResource( 5 )
 flip_h = true
+
+[node name="portal" type="Area2D" parent="."]
+position = Vector2( 298.913, 550.153 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal"]
+position = Vector2( -5.04541, -110.998 )
+shape = SubResource( 9 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_left = -124.0
+margin_top = -86.0
+margin_right = 1154.0
+margin_bottom = 696.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+autoplay = "motion"
+anims/motion = SubResource( 10 )
+[connection signal="body_entered" from="portal" to="portal" method="_on_portal_body_entered"]
 
 [editable path="player"]

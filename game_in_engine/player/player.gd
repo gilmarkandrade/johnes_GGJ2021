@@ -119,6 +119,7 @@ func _physics_process(delta):
 		#===================================================================
 		#              JUMP
 		#===================================================================
+		
 		if on_floor:
 			can_jump = true
 				
@@ -195,3 +196,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 func _on_area_body_area_entered(area):
 	if area.is_in_group("weapom_enemie") or area.is_in_group("bullet_enemie"):
 		death = true
+
+
+

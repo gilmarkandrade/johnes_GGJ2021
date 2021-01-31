@@ -9,6 +9,8 @@ var player = preload("res://player/player.tscn")
 var key = preload("res://scene/prefabs/key.tscn")
 var gate = preload("res://scene/prefabs/gate.tscn") 
 var check_create_player = false
+
+
 func _ready():
 	
 	if random_active :
@@ -40,7 +42,7 @@ func generate_room():
 			
 			var pixel = image.get_pixel(x,y)
 			var pixel_pos:Vector2 = Vector2(x,y)
-			print(pixel)
+			
 			match pixel:
 				Color(0,0,0,1): #preto
 					set_cell(pixel_pos.x,pixel_pos.y,1)
