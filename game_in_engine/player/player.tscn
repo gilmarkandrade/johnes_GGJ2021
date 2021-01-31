@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=107 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/idlle/frame0016.png" type="Texture" id=2]
@@ -88,8 +88,14 @@
 [ext_resource path="res://player/death/frame0106.png" type="Texture" id=86]
 [ext_resource path="res://player/death/frame0101.png" type="Texture" id=87]
 [ext_resource path="res://assets/lightpalayer.png" type="Texture" id=88]
+[ext_resource path="res://audio/soundEffect/sfx game jam/son_jone_morrendo.wav" type="AudioStream" id=89]
+[ext_resource path="res://audio/soundEffect/sfx game jam/game_jam_tiro_menu.wav" type="AudioStream" id=90]
+[ext_resource path="res://audio/soundEffect/sfx game jam/passo_d.wav" type="AudioStream" id=91]
+[ext_resource path="res://audio/soundEffect/sfx game jam/som_liga_fosforo.wav" type="AudioStream" id=92]
+[ext_resource path="res://audio/soundEffect/sfx game jam/som_fumando_novo.wav" type="AudioStream" id=93]
+[ext_resource path="res://audio/soundEffect/sfx game jam/som_pulo_game_jam.wav" type="AudioStream" id=94]
 
-[sub_resource type="RayShape2D" id=13]
+[sub_resource type="RayShape2D" id=1]
 length = 18.7572
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -153,9 +159,9 @@ tracks/1/keys = {
 "values": [ 1.0 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=5]
 resource_name = "idlle_2"
-length = 5.0
+length = 5.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -180,8 +186,32 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 1.0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("esqueiro:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.9, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("fumando:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 3.7, 3.9, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=6]
 resource_name = "idlle_3"
 length = 5.0
 loop = true
@@ -208,6 +238,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("fumando:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( -0.3, 0.6, 0.7, 1.4, 1.6, 2.3, 4, 4.1, 5.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, false, true, false ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -238,7 +280,7 @@ tracks/1/keys = {
 "values": [ 1.8, 1.0 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=8]
 resource_name = "jump_up"
 length = 2.0
 tracks/0/type = "value"
@@ -264,6 +306,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 1.0 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "som_pulo"
+} ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -319,6 +375,23 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 1.0 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "som_passo"
+}, {
+"args": [  ],
+"method": "som_passo"
+} ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -377,7 +450,7 @@ script = ExtResource( 1 )
 ]]
 position = Vector2( 5.46202, 94.7119 )
 scale = Vector2( 4.84, 1 )
-shape = SubResource( 13 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
 "player",
@@ -386,15 +459,15 @@ position = Vector2( 6.72717, 18.8964 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 11 )
+texture = ExtResource( 75 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/death = SubResource( 3 )
 anims/idlle = SubResource( 4 )
-anims/idlle_2 = SubResource( 14 )
-anims/idlle_3 = SubResource( 15 )
+anims/idlle_2 = SubResource( 5 )
+anims/idlle_3 = SubResource( 6 )
 anims/jump_dow = SubResource( 7 )
-anims/jump_up = SubResource( 16 )
+anims/jump_up = SubResource( 8 )
 anims/return_idlle = SubResource( 9 )
 anims/run = SubResource( 10 )
 anims/shoot = SubResource( 11 )
@@ -406,6 +479,10 @@ one_shot = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -1.7818 )
 current = true
+limit_left = 0
+limit_top = 0
+limit_right = 6400
+limit_bottom = 6400
 smoothing_enabled = true
 smoothing_speed = 8.0
 
@@ -436,6 +513,26 @@ texture = ExtResource( 88 )
 energy = 0.6
 range_layer_min = -128
 range_layer_max = 128
+
+[node name="effect_passo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 91 )
+
+[node name="effect_tiro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 90 )
+
+[node name="effec_morte" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 89 )
+
+[node name="fumando" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 93 )
+volume_db = -10.0
+
+[node name="esqueiro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 92 )
+
+[node name="pulo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 94 )
+volume_db = -5.0
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="delay_fumando" to="." method="_on_delay_fumando_timeout"]
 [connection signal="area_entered" from="area_body" to="." method="_on_area_body_area_entered"]

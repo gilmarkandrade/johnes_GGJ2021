@@ -19,8 +19,10 @@ func in_cutscene(value:bool):
 	in_anim = value
 	$AnimationPlayer.play("idlle")
 	set_physics_process(false)
+	
 func _physics_process(delta):
 	SingletonGame.update_pos_player(global_position)
+	
 	if in_anim == true and death == false:
 		move.y += gravity
 		
@@ -145,6 +147,7 @@ func _physics_process(delta):
 						can_jump = false
 								
 		if on_floor == false:
+			
 			if move.y >- 0.001  :
 				$AnimationPlayer.current_animation = "jump_dow"
 				check_idle = false
@@ -159,8 +162,12 @@ func _physics_process(delta):
 					
 	move = move_and_slide_with_snap( move, Vector2(0, 1), Vector2(up))
 
-
+func som_passo():
+	$effect_passo.play()
+func som_pulo():
+	$effect_passo.play()
 func bullet():
+	$effect_tiro.play()
 	var B = bullet.instance()
 	get_parent().add_child(B)
 	B.flip_h = flip_h
@@ -196,6 +203,4 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 func _on_area_body_area_entered(area):
 	if area.is_in_group("weapom_enemie") or area.is_in_group("bullet_enemie"):
 		death = true
-
-
-
+		$effec_morte.play()

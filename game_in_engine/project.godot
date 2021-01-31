@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Jones's Redemption Seek"
-run/main_scene="res://scene/main.tscn"
+run/main_scene="res://scene/bootsplash.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -56,4 +56,9 @@ ui_shoot={
 
 [rendering]
 
+quality/intended_usage/framebuffer_allocation.mobile=1
+batching/parameters/max_join_item_commands=8
+limits/buffers/canvas_polygon_buffer_size_kb=256
+limits/buffers/canvas_polygon_index_buffer_size_kb=256
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

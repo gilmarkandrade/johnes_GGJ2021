@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-aee86a159e85ba93888586407fb88b26.stex"
+path="res://.import/Arquivo_000.jpeg-bb11a4c07edf76060cfc673fb404eb09.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://audio/soundEffect/icon.png"
-dest_files=[ "res://.import/icon.png-aee86a159e85ba93888586407fb88b26.stex" ]
+source_file="res://assets/Arquivo_000.jpeg"
+dest_files=[ "res://.import/Arquivo_000.jpeg-bb11a4c07edf76060cfc673fb404eb09.stex" ]
 
 [params]
 

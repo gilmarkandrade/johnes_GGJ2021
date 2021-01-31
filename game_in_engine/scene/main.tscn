@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://script/main.gd" type="Script" id=1]
 [ext_resource path="res://script/generate_world.gd" type="Script" id=2]
 [ext_resource path="res://assets/background.png" type="Texture" id=3]
 [ext_resource path="res://assets/tileset_cave.png" type="Texture" id=4]
 [ext_resource path="res://scene/tile_red_enemie.gd" type="Script" id=5]
+[ext_resource path="res://audio/soundTrack/músicas game jam/level_game_jam_looping.wav" type="AudioStream" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -140,3 +141,7 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 autoplay = "open"
 anims/open = SubResource( 4 )
+
+[node name="themegameplay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -6.0

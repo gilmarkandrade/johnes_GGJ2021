@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/monstro_ataque_game_jam.wav-b79fcc2b3f2b60c983c1e3da3b2264c6.sample"
+
+[deps]
+
+source_file="res://audio/soundEffect/sfx game jam/monstro_ataque_game_jam.wav"
+dest_files=[ "res://.import/monstro_ataque_game_jam.wav-b79fcc2b3f2b60c983c1e3da3b2264c6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

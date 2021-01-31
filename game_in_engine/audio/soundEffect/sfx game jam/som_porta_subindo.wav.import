@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/som_porta_subindo.wav-c7591ff5b7b757ab929c07fdab38a2cf.sample"
+
+[deps]
+
+source_file="res://audio/soundEffect/sfx game jam/som_porta_subindo.wav"
+dest_files=[ "res://.import/som_porta_subindo.wav-c7591ff5b7b757ab929c07fdab38a2cf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

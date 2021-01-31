@@ -36,7 +36,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_arrowenemie_body_entered(body):
-	print(body.get_groups())
+	
 	if body.is_in_group("player") and destroy == false:
 		
 		queue_free()

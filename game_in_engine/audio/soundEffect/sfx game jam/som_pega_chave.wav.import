@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/som_pega_chave.wav-6789582bf3393e785a0a588d996e3d2b.sample"
+
+[deps]
+
+source_file="res://audio/soundEffect/sfx game jam/som_pega_chave.wav"
+dest_files=[ "res://.import/som_pega_chave.wav-6789582bf3393e785a0a588d996e3d2b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/monstro_morte_game_jam.wav-7e6b8a02219666bf2fab94fea4b05cd1.sample"
+
+[deps]
+
+source_file="res://audio/soundEffect/sfx game jam/monstro_morte_game_jam.wav"
+dest_files=[ "res://.import/monstro_morte_game_jam.wav-7e6b8a02219666bf2fab94fea4b05cd1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

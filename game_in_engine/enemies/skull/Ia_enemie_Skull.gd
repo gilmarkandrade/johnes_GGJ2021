@@ -7,8 +7,9 @@ var flip = false
 var in_range = false
 var can_shoot = true
 var in_area_return = false
-var life = 30
+var life = 5
 var bullet = preload("res://enemies/skull/projetil_enemy.tscn")
+
 func _ready():
 	set_physics_process(false)
 	
@@ -69,8 +70,10 @@ func _on_body_area_entered(area):
 		if life <= 0 :
 			death = true
 			$AnimationPlayer.current_animation = "Death"
+			$effecmorte.play()
 		else:
 			life -= 1
+			$effecdano.play()
 			$Node2D.modulate = Color(1,0,0,1)
 			yield(get_tree().create_timer(0.2),"timeout")
 			$Node2D.modulate = Color(1,1,1,1)
@@ -106,6 +109,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		set_physics_process(false)
 
 func create_bullet(value:bool):
+	$effectflexa.play()
 	var B = bullet.instance()
 	get_parent().add_child(B)
 	B.position = $"Node2D/Sprite(ABraçoE)/Sprite(BraçoE)/Position2D".global_position

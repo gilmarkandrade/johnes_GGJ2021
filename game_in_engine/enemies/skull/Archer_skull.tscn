@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://enemies/skull/Esqueleto/Pé Direito.png" type="Texture" id=1]
 [ext_resource path="res://enemies/skull/Esqueleto/Pé Esquerdo.png" type="Texture" id=2]
@@ -20,8 +20,11 @@
 [ext_resource path="res://enemies/skull/Arco/Arco0007.png" type="Texture" id=18]
 [ext_resource path="res://enemies/skull/Arco/Arco0003.png" type="Texture" id=19]
 [ext_resource path="res://enemies/skull/Ia_enemie_Skull.gd" type="Script" id=20]
+[ext_resource path="res://audio/soundEffect/sfx game jam/dano_esqueleto.wav" type="AudioStream" id=21]
+[ext_resource path="res://audio/soundEffect/sfx game jam/esqueleto_morte.wav" type="AudioStream" id=22]
+[ext_resource path="res://audio/soundEffect/sfx game jam/som_flecha_game_jam.wav" type="AudioStream" id=23]
 
-[sub_resource type="CapsuleShape2D" id=12]
+[sub_resource type="CapsuleShape2D" id=1]
 height = 136.29
 
 [sub_resource type="Animation" id=2]
@@ -4638,7 +4641,7 @@ script = ExtResource( 20 )
 "enemie",
 ]]
 position = Vector2( -2.62204, 25.0966 )
-shape = SubResource( 12 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
@@ -4811,8 +4814,18 @@ position = Vector2( -2.99658, 3.74576 )
 shape = SubResource( 11 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( -3.79232, 21.5816 )
-scale = Vector2( 17.9042, 15.5208 )
+position = Vector2( 1.06752, 38.6426 )
+scale = Vector2( 51.2685, 36.7336 )
+
+[node name="effectflexa" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 23 )
+
+[node name="effecmorte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 22 )
+
+[node name="effecdano" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 21 )
+volume_db = 5.0
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="body" to="." method="_on_body_area_entered"]
 [connection signal="body_entered" from="area_range" to="." method="_on_area_range_body_entered"]

@@ -13,6 +13,6 @@ func _on_key_area_body_entered(body):
 		$AnimationPlayer.play("rotate")
 		$effect.play()
 		SingletonGame.update_key(true)
-		yield(get_tree().create_timer(1),"timeout")
+		yield(get_tree().create_timer(1.2),"timeout")
 		queue_free()
 		

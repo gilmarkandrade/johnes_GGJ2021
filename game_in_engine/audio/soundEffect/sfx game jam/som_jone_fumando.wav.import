@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/som_jone_fumando.wav-d2d0291b7b3e0a9e262950c47c82febd.sample"
+
+[deps]
+
+source_file="res://audio/soundEffect/sfx game jam/som_jone_fumando.wav"
+dest_files=[ "res://.import/som_jone_fumando.wav-d2d0291b7b3e0a9e262950c47c82febd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

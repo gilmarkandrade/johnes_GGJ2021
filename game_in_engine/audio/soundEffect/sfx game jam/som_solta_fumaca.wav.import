@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/som_solta_fumaca.wav-812138c9742f301770f551338d703ec9.sample"
+
+[deps]
+
+source_file="res://audio/soundEffect/sfx game jam/som_solta_fumaca.wav"
+dest_files=[ "res://.import/som_solta_fumaca.wav-812138c9742f301770f551338d703ec9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

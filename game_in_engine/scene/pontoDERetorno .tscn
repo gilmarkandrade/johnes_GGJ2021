@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Background/Chão.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/Background/MetadeBuraco.png" type="Texture" id=6]
 [ext_resource path="res://script/portal.gd" type="Script" id=7]
 [ext_resource path="res://assets/Background/Fundo.png" type="Texture" id=8]
+[ext_resource path="res://audio/soundEffect/sala_do_comeco.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 900.961, 10 )
@@ -173,6 +174,11 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 autoplay = "motion"
 anims/motion = SubResource( 10 )
+
+[node name="theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -5.0
+autoplay = true
 [connection signal="body_entered" from="portal" to="portal" method="_on_portal_body_entered"]
 
 [editable path="player"]

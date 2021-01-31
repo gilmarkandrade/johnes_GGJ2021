@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/som_virando_liquido_game_jam.wav-5251a2322dfdaad1d3221adf3cb1fa87.sample"
+
+[deps]
+
+source_file="res://audio/soundEffect/sfx game jam/som_virando_liquido_game_jam.wav"
+dest_files=[ "res://.import/som_virando_liquido_game_jam.wav-5251a2322dfdaad1d3221adf3cb1fa87.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

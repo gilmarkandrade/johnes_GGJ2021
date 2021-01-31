@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/menu_load_gun.wav-2236d2056220ed96218aab2aa7bb769b.sample"
+
+[deps]
+
+source_file="res://audio/soundEffect/sfx game jam/menu_load_gun.wav"
+dest_files=[ "res://.import/menu_load_gun.wav-2236d2056220ed96218aab2aa7bb769b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/passo_e.wav-1ed5d914dfff97db6434020cd7307047.sample"
+
+[deps]
+
+source_file="res://audio/soundEffect/sfx game jam/passo_e.wav"
+dest_files=[ "res://.import/passo_e.wav-1ed5d914dfff97db6434020cd7307047.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

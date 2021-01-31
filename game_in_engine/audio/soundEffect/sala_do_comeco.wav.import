@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sala_do_comeco.wav-451d8198f5bd98294729959103b1a2c3.sample"
+
+[deps]
+
+source_file="res://audio/soundEffect/sala_do_comeco.wav"
+dest_files=[ "res://.import/sala_do_comeco.wav-451d8198f5bd98294729959103b1a2c3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

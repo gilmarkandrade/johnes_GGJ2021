@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/som_fumando_novo.wav-ddc4f79b7cf69f499e3c778beab201ba.sample"
+
+[deps]
+
+source_file="res://audio/soundEffect/sfx game jam/som_fumando_novo.wav"
+dest_files=[ "res://.import/som_fumando_novo.wav-ddc4f79b7cf69f499e3c778beab201ba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

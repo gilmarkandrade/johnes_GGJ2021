@@ -9,8 +9,9 @@ func _on_Area2D_body_entered(body):
 		body.in_cutscene(true)
 		$AnimatedSprite.frame = 0
 		$AnimatedSprite.play("open")
+		$effect.play()
 		yield(get_tree().create_timer(5),"timeout")
-		get_tree().change_scene("res://scene/final_game.tscn")
+		get_tree().change_scene("res://scene/saladepegarchapeu.tscn")
 	
 	if body.is_in_group("player") and SingletonGame.get_key == false:
 		$Label.visible = true
