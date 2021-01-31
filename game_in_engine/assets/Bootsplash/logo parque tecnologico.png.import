@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Chão.png-730969444429077cc572639c47f4dffd.stex"
+path="res://.import/logo parque tecnologico.png-80337e1d22f9a20f66f0f383a82540cd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/Chão.png"
-dest_files=[ "res://.import/Chão.png-730969444429077cc572639c47f4dffd.stex" ]
+source_file="res://assets/Bootsplash/logo parque tecnologico.png"
+dest_files=[ "res://.import/logo parque tecnologico.png-80337e1d22f9a20f66f0f383a82540cd.stex" ]
 
 [params]
 
