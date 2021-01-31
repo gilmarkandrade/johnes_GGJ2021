@@ -385,10 +385,9 @@ position = Vector2( 6.72717, 18.8964 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 86 )
+texture = ExtResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 1.5
 anims/death = SubResource( 3 )
 anims/idlle = SubResource( 4 )
 anims/idlle_2 = SubResource( 5 )

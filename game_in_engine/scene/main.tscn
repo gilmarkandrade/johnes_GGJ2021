@@ -2,7 +2,7 @@
 
 [ext_resource path="res://script/main.gd" type="Script" id=1]
 [ext_resource path="res://script/generate_world.gd" type="Script" id=2]
-[ext_resource path="res://levels/icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/background.png" type="Texture" id=3]
 [ext_resource path="res://assets/tileset_cave.png" type="Texture" id=4]
 [ext_resource path="res://scene/tile_red_enemie.gd" type="Script" id=5]
 
@@ -78,9 +78,12 @@ tile_data = PoolIntArray( 1703982, 2, 0, 1703987, 2, 0, 1835054, 2, 0, 2162735, 
 script = ExtResource( 2 )
 numero_de_fases_na_pasta = 5
 
-[node name="icon" type="Sprite" parent="TileMap"]
-modulate = Color( 0, 1, 0, 1 )
-position = Vector2( 501.483, 300.588 )
-scale = Vector2( 15.8987, 9.50881 )
-z_index = -17
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="background" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 506.975, 300.561 )
+scale = Vector2( 0.875, 0.919444 )
 texture = ExtResource( 3 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground"]
+color = Color( 0.388235, 0.388235, 0.388235, 1 )
