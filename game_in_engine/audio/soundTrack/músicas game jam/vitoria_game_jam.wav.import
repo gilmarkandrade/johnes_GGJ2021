@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/vitoria_game_jam.wav-3e2baa0cd20889c0bdec391ff57a300f.sample"
+
+[deps]
+
+source_file="res://audio/soundTrack/músicas game jam/vitoria_game_jam.wav"
+dest_files=[ "res://.import/vitoria_game_jam.wav-3e2baa0cd20889c0bdec391ff57a300f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

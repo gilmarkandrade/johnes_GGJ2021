@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://script/tela de entrada.gd" type="Script" id=1]
+[ext_resource path="res://audio/soundTrack/músicas game jam/intro_game_jam.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/Ilustracao_Sem_Titulo.jpg1.jpeg" type="Texture" id=3]
+[ext_resource path="res://assets/pretodegrade.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "motion"
-length = 35.0
+length = 45.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:rect_position")
 tracks/0/interp = 1
@@ -12,20 +15,55 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 34.9 ),
+"times": PoolRealArray( 0, 44.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 81, 664.667 ), Vector2( 81, -1083.93 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("theme:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 35.4, 44.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -54.557 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 35.3, 45 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
 [node name="tela de entrada" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="Ilustracao_Sem_Titulojpg1" type="Sprite" parent="."]
+position = Vector2( 517.051, 307.063 )
+scale = Vector2( 0.541362, 0.515008 )
+texture = ExtResource( 3 )
+
 [node name="fundo" type="Sprite" parent="."]
+position = Vector2( -0.000244141, 5.03967 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "motion"
 anims/motion = SubResource( 1 )
+
+[node name="pretodegrade" type="Sprite" parent="."]
+position = Vector2( 253.775, 420.867 )
+rotation = -1.57068
+texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 81.0
@@ -38,4 +76,8 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/level_game_jam_looping.wav-df9ced76cce323a1d37ed2baccc34420.sample"
+
+[deps]
+
+source_file="res://audio/soundTrack/músicas game jam/level_game_jam_looping.wav"
+dest_files=[ "res://.import/level_game_jam_looping.wav-df9ced76cce323a1d37ed2baccc34420.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

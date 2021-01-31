@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/intro_game_jam.wav-181b892a6606920500e23167c5864318.sample"
+
+[deps]
+
+source_file="res://audio/soundTrack/músicas game jam/intro_game_jam.wav"
+dest_files=[ "res://.import/intro_game_jam.wav-181b892a6606920500e23167c5864318.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

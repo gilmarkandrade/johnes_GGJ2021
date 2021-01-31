@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://script/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/fundo.jpg.jpeg" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://assets/Botao_Highlight.png" type="Texture" id=8]
 [ext_resource path="res://assets/Botao_Pressed.png" type="Texture" id=9]
 [ext_resource path="res://assets/Botao_Normal.png" type="Texture" id=10]
+[ext_resource path="res://assets/Logo_jogo.png" type="Texture" id=11]
+[ext_resource path="res://audio/soundTrack/músicas game jam/menu_game_jam_looping.wav" type="AudioStream" id=12]
 
 [sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 8 )
@@ -207,6 +209,11 @@ position = Vector2( 511.259, 304.205 )
 scale = Vector2( 0.557094, 0.515254 )
 texture = ExtResource( 2 )
 
+[node name="Logo_jogo" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 325.383, 95.4378 )
+scale = Vector2( 0.334097, 0.351265 )
+texture = ExtResource( 11 )
+
 [node name="play" type="Button" parent="CanvasLayer"]
 margin_left = 769.0
 margin_top = 218.0
@@ -376,6 +383,11 @@ anims/openmenu = SubResource( 1 )
 
 [node name="animation_credits" type="AnimationPlayer" parent="."]
 anims/motion = SubResource( 4 )
+
+[node name="theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -7.0
+autoplay = true
 [connection signal="focus_entered" from="CanvasLayer/play" to="." method="_on_play_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/play" to="." method="_on_play_pressed"]
 [connection signal="focus_entered" from="CanvasLayer/creditos" to="." method="_on_creditos_focus_entered"]
