@@ -11,13 +11,14 @@ var life = 10
 var bullet = preload("res://enemies/slime/projetil_slime.tscn")
 var checkmove = false
 var inmove2 = false
+
 func _ready():
 	set_physics_process(false)
 	
 func _physics_process(delta):
-	
+	move.y += gravity
 	if death == false:
-		move.y += gravity
+		
 		
 		if SingletonGame.player_position.x >= global_position.x :
 			flip = false
@@ -116,8 +117,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_slimesprite_animation_finished():
-	if $slimesprite.animation == "death":
-		set_physics_process(false)
+	
 	if $slimesprite.animation == "move":
 		inmove2 = true
 		$slimesprite.play("move2")

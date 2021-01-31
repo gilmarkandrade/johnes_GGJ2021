@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://script/main.gd" type="Script" id=1]
 [ext_resource path="res://script/generate_world.gd" type="Script" id=2]
@@ -97,6 +97,57 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+uniform vec3 color = vec3(1.0, 1.0, 1.0);
+uniform int OCTAVES = 4;
+
+float rand(vec2 coord){
+    return fract (sin (dot(coord, vec2(56, 78))* 1000.0) * 1000.0);
+}
+
+float noise(vec2 coord){
+    vec2 i = floor(coord);
+    vec2 f = fract(coord);
+
+    float a = rand(i);
+    float b = rand(i + vec2(1.0, 0.0));
+    float c = rand(i + vec2(0.0, 1.0));
+    float d = rand(i + vec2(1.0, 1.0));
+
+    vec2 cubic = f * f * (3.0 - 2.0 * f);
+
+    return mix(a, b, f.x) + (c - a) * f.y * (1.0 - f.x) + (d - b) * f.x * f.y;
+}
+
+float fbm(vec2 coord){
+    float value = 0.0;
+    float scale = 0.5;
+
+    for(int i = 0; i < OCTAVES; i++){
+        value += noise(coord) * scale;
+        coord *= 2.0;
+        scale *= 0.5;
+    }
+    return value;
+}
+
+void fragment(){
+vec2 coord = UV * 20.0;
+
+vec2  motion = vec2(fbm(coord + vec2(TIME * 0.5, TIME * -0.5)));
+
+float final = fbm(coord + motion);
+
+COLOR = vec4(color, final * 0.5);
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+shader_param/color = Vector3( 1, 1, 1 )
+shader_param/OCTAVES = 4
+
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -111,7 +162,7 @@ numero_de_fases_na_pasta = 5
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="TileMap"]
 z_index = 128
-color = Color( 0.247059, 0.247059, 0.247059, 1 )
+color = Color( 0.32549, 0.32549, 0.32549, 1 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -122,7 +173,7 @@ texture = ExtResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground"]
 z_index = 128
-color = Color( 0.247059, 0.247059, 0.247059, 1 )
+color = Color( 0.14902, 0.14902, 0.14902, 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 128
@@ -146,3 +197,16 @@ anims/open = SubResource( 4 )
 stream = ExtResource( 6 )
 volume_db = -6.0
 autoplay = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+self_modulate = Color( 1, 1, 1, 0.25098 )
+material = SubResource( 6 )
+margin_left = -50.0
+margin_top = -38.0
+margin_right = 1054.0
+margin_bottom = 624.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

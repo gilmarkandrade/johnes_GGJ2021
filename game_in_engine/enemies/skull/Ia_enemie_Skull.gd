@@ -14,9 +14,9 @@ func _ready():
 	set_physics_process(false)
 	
 func _physics_process(delta):
-	
+	move.y += gravity
 	if death == false:
-		move.y += gravity
+		
 		
 		if SingletonGame.player_position.x >= global_position.x :
 			flip = false
@@ -106,7 +106,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "shoot":
 		can_shoot = true
 	if anim_name == "death":
-		set_physics_process(false)
+		pass
 
 func create_bullet(value:bool):
 	$effectflexa.play()
